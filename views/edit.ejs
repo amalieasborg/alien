@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Alien</title>
+</head>
+<body>
+<h1>Edit Alien</h1>
+<form action="/alien/<%= alien._id %>/update" method="POST">
+    <label>Name: <input type="text" name="name" value="<%= alien.name %>"></label><br>
+    <label>Race: <input type="text" name="race" value="<%= alien.race %>"></label><br>
+    <label>Planet: <input type="text" name="planet" value="<%= alien.planet %>"></label><br>
+    <label>Abilities: <input type="text" name="abilities" value="<%= alien.abilities %>"></label><br>
+    <button type="submit">Update Alien</button>
+</form>
+<a href="/">Back to list</a>
+</body>
+</html>

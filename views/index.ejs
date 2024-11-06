@@ -1,0 +1,25 @@
+>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Manager</title>
+    <link rel="stylesheet" href="public/css/alienManager.css">
+</head>
+<body>
+<h1>Alien Tracker</h1>
+<a href="/new">Add New Alien</a>
+<ul>
+    <% aliens.forEach(alien => { %>
+    <li><%= alien.name %> by <%= alien.race %> (<%= alien.planet %>) <%= alien.abilities %>
+        <form action="/alien/<%= alien._id %>/delete" method="POST" style="display:inline;">
+            <button type="submit">Delete</button>
+        </form>
+        <form action="/alien/<%= alien._id %>/update" method="GET" style="display:inline;">
+            <button type="submit">Update</button>
+        </form>
+    </li>
+    <% }) %>
+</ul>
+</body>
+</html>
